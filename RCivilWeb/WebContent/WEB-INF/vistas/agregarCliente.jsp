@@ -70,7 +70,7 @@
 								</div>
 							</div>
 							
-							<c:if test="${atencion-select == two} ">
+							<c:if test="atencion_select == two">
 								<div class="field is-right">
 							 	 <label class="label">Numero de atencion</label>
 							  		<div class="control">

@@ -16,16 +16,18 @@
 							<thead class="has-background-light">
 								<tr>
 									<th><div class="select">
-										<select>
+										<select name="select_mostrar" id="select_mostrar">
 											<option></option>
-											<option>Solicitud de Cedula de Identidad</option>
-											<option>Retiro de Cedula de Identidad</option>
-											<option>Solicitud de Certificado de Nacimiento</option>
-											<option>Solicitud de Certificado de Defucion</option>
+											<option name="op_1" id="op_1">Solicitud de Cedula de Identidad</option>
+											<option name="op_2" id="op_2">Retiro de Cedula de Identidad</option>
+											<option name="op_3" id="op_3">Solicitud de Certificado de Nacimiento</option>
+											<option name="op_4" id="op_4">Solicitud de Certificado de Defucion</option>
 										</select>
 									</div></th>
 									<th>
-									<button class="button has-background-dark has-text-white">Filtrar</button>
+									<button type="submit"class="button has-background-dark has-text-white" id="btn_filtrar">Filtrar
+										<c:if test="select_mostrar == op_2"></c:if>
+									</button>
 									</th>
 								</tr>
 							</thead>
@@ -50,7 +52,7 @@
 										<td>${cliente.numSolicitud}</td>
 										<td>${cliente.nombre}</td>
 										<td>${cliente.tipoSolicitud}</td>
-										<td><a href="MostrarClienteController.do?nombreEliminar=${cliente.nombre}" class="has-text-danger">Atender</a></td>
+										<td><a href="MostrarClienteController.do?nombreEliminar=${cliente.nombre}" class="button has-text-danger">Atender</a></td>
 									</tr>
 								</c:forEach>
 							</tbody>
